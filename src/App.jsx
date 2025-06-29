@@ -17,11 +17,12 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+
+const sol_address = import.meta.env.VITE_SOL_ENDPOINT;
+
 export default function App() {
   return (
-    <ConnectionProvider
-      endpoint={"https://solana-devnet.g.alchemy.com/v2/bLuIfP6sjyjvrdInKhNeX"}
-    >
+    <ConnectionProvider endpoint={sol_address}>
       <WalletProvider wallets={[]} autoConnect>
         <WalletModalProvider>
           <div className="flex flex-col gap-6 items-center justify-center min-h-svh">
