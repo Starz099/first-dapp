@@ -1,12 +1,40 @@
-import { useState } from 'react'
+import { ConnectionProvider, WalletProvider } from '@solana/wallet-adapter-react';
+import {
+  WalletDisconnectButton,
+    WalletModalProvider,
+    WalletMultiButton,
+} from '@solana/wallet-adapter-react-ui';
+// Default styles that can be overridden by your app
+import '@solana/wallet-adapter-react-ui/styles.css';
 
-function App() {
-
+import Airdrop  from './Airdrop'
+import {
+  Card,
+  CardAction,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+export default function App() {
   return (
-    <>
-      <div className='bg-black text-white w-1/6'>hello</div>
-    </>
-  )
+    <ConnectionProvider
+      endpoint={"https://solana-devnet.g.alchemy.com/v2/bLuIfP6sjyjvrdInKhNeX"}
+    >
+      <WalletProvider wallets={[]} autoConnect>
+        <WalletModalProvider>
+          <div className="flex flex-col gap-6 items-center justify-center min-h-svh">
+            <Card className="px-4 flex w-1/2 ">
+              <CardTitle>
+                <WalletMultiButton className=""></WalletMultiButton>
+              </CardTitle>
+              <CardDescription>Card Description</CardDescription>
+              <Airdrop></Airdrop>
+            </Card>
+          </div>
+        </WalletModalProvider>
+      </WalletProvider>
+    </ConnectionProvider>
+  );
 }
-
-export default App
