@@ -64,3 +64,6 @@ Make sure your browser has a Solana wallet extension (like Phantom) installed an
 ### Demo Video
 
 Can be found in demo-video folder
+
+### Screenshots
+- ![Interface](./screenshots/interface.png)

@@ -46,7 +46,7 @@ export default function Airdrop() {
         Balance : {balance}
       </CardTitle>
       <Input type="text" placeholder="Amount" className="" onChange={updateAmount}/>
-      <Button onClick={sendAirdrop}>Send Airdrop</Button>
+      <Button onClick={sendAirdrop} className="cursor-pointer">Send Airdrop</Button>
     </>
   );
 }

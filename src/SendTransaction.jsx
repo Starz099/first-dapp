@@ -38,7 +38,7 @@ export default function TransactionBox() {
     <>
       <Input type="text" placeholder="Amount" className="" onChange={updateAmount}/>
       <Input type="text" placeholder="To :" className="" onChange={updateAddress}/>
-      <Button onClick={sendTransaction}>Send </Button>
+      <Button onClick={sendTransaction} className="cursor-pointer">Send</Button>
     </>
   );
 }
